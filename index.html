@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>customElements.define("lite-video-player",class extends HTMLElement{connectedCallback(){const e=this.attachShadow({mode:"open"}),t=this.getAttribute.bind(this),a=t("video-id")||"",r=t("base-url")||"",i=t("aspect-ratio")||"16:9",s=t("params")||"";let o="16/9";if(i==="square")o="1/1";else if(i.includes(":"))o=i.replace(":","/");else o=i;e.innerHTML=`<style>:host{display:block;max-width:1280px;margin:auto}.v{position:relative;width:100%;aspect-ratio:${o};overflow:hidden;border-radius:8px;background:#000}iframe{position:absolute;inset:0;width:100%;height:100%;border:0}</style><div class="v"><iframe src="${r}/embed/${a}?${s}" loading="lazy" allowfullscreen></iframe></div>`}});</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
